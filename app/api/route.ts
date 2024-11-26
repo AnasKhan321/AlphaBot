@@ -10,7 +10,6 @@ export async function  POST(request : Request) {
  
         const body = await request.json(); 
         const responsedtext = await run(body.prompt)  ; 
-        console.log(responsedtext)
         return Response.json({data : responsedtext  , success : true})
     } catch (error) {
         console.log(error)
