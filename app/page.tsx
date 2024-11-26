@@ -34,12 +34,13 @@ function Page() {
     const data = await response.json();
     console.log(data);
 
-    if (data.success) {
+    if (data.success  == true) {
       setLoading(false);
       setPrompt("");
       const promptString = replaceNewlinesWithBr(data.data);
       setStrings([promptString]);
     } else {
+      setLoading(false)
       setStrings(["Something Went Wrong!"]);
     }
 

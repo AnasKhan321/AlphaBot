@@ -7,10 +7,10 @@ const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY  as string)
 export async function  POST(request : Request) {
     
     try {
-        console.log(request)
-
+ 
         const body = await request.json(); 
         const responsedtext = await run(body.prompt)  ; 
+        console.log(responsedtext)
         return Response.json({data : responsedtext  , success : true})
     } catch (error) {
         return Response.json({success : false })
