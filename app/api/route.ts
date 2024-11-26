@@ -13,6 +13,7 @@ export async function  POST(request : Request) {
         console.log(responsedtext)
         return Response.json({data : responsedtext  , success : true})
     } catch (error) {
+        console.log(error)
         return Response.json({success : false })
     
     }
